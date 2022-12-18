@@ -19,7 +19,7 @@ public class Solution
             return 0;
         var left = RangeSumBST(root.left, low, high);
         var right = RangeSumBST(root.right, low, high);
-        if (root.val > low && root.val < high)
+        if (root.val >= low && root.val <= high)
         {
             return left + right + root.val;
         }
