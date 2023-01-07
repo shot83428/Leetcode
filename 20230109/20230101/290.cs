@@ -4,18 +4,22 @@ public class Solution
 {
     public bool WordPattern(string pattern, string s)
     {
-        var spilt = pattern.Split(' ');
+        var spilt = s.Split(' ');
         Dictionary<char, string> dic = new Dictionary<char, string>();
-        for (int index = 0; index < s.Length; index++)
+        if (spilt.Length != pattern.Length)
+            return false;
+        for (int index = 0; index < pattern.Length; index++)
         {
-            if (dic.TryGetValue(s[index], out var value))
+            if (dic.TryGetValue(pattern[index], out var value))
             {
-                if (!string.Equals(value, pattern[index]))
+                if (!string.Equals(value, spilt[index]))
                     return false;
             }
             else
             {
-                dic.Add(s[index], pattern[index]);
+                if (dic.ContainsValue(spilt[index]))
+                    return false;
+                dic.Add(pattern[index], spilt[index]);
             }
         }
         return true;
