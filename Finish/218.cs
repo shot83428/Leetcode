@@ -3,14 +3,14 @@
 //所以左邊的通通改為負的就反過來成為一定找最矮
 //重點是右邊是找兩個點相交取矮+取前一個交叉點以及到最底要抓0
 //所以相對於左邊就是堆上去找第二個或是前一個
-//因此sd是一個max Dictionary 去紀錄最高
+//因此heightCounts是一個max Dictionary 去紀錄最高
 //<0就是左邊季統計數量
 //>0就是右邊要將相對高度扣除抓他的下一個點去放在result
 //範例假如一個凸 最高是10中間是5
 //10 1 ,5 1 ,0 0(高度,數量)
 //遇到有10扣掉勝5 1,0 0
 //result會抓到5但是高度是10的x軸的點交叉點
-//10 但是sd會得到最低的點 5 1 
+//10 但是heightCounts會得到最低的點 5 1 
 //就會的到 5及x軸放在height的點
 public class Solution {
     public IList<IList<int>> GetSkyline(int[][] buildings) 
