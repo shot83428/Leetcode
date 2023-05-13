@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace Leetcode.Solutions
+﻿namespace Leetcode.Solutions
 {
     public class Solution_3
     {
