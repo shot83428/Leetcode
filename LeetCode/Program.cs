@@ -1,9 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Leetcode.Solutions;
 
-Solution_649 solution_649 = new Solution_649();
+Solution_042 solution = new Solution_042();
 
-var reulst = solution_649.PredictPartyVictory("RDD");
+var reulst = solution.Trap(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 });
 
 Console.WriteLine(reulst);
 Console.ReadLine();
