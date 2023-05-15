@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Solutions._0001_0100
+﻿namespace Leetcode.Solutions
 {
-    internal class _096_Unique_Binary_Search_Trees
+    public class Solution_096
     {
+        public int NumTrees(int n)
+        {
+            int[] dp = new int[n + 1];
+            dp[0] = 1;
+            dp[1] = 1;
+            for (int index = 2; index <= n; index++)
+            {
+                for (int i = index - 1, j = 0; i >= 0; i--, j++)
+                {
+                    dp[index] += dp[i] * dp[j];
+                }
+            }
+            return dp[n];
+        }
     }
 }
